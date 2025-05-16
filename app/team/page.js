@@ -5,7 +5,6 @@ import * as React from 'react';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
@@ -48,7 +47,6 @@ const teamMembers = [
 export default function Team() {
   const [isHovered, setIsHovered] = React.useState(false);
   const [hoveredCard, setHoveredCard] = React.useState(null);
-  const [hoveredButton, setHoveredButton] = React.useState(false);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -61,7 +59,7 @@ export default function Team() {
                 edge="start"
                 aria-label="menu"
                 sx={{ 
-                  color: "#94A3B8",
+                  color: "#FCD34D",
                   transition: 'transform 0.2s',
                   '&:hover': {
                     transform: 'rotate(45deg)'
@@ -77,7 +75,7 @@ export default function Team() {
                 variant="h6" 
                 component="div"
                 sx={{ 
-                  color: "#94A3B8",
+                  color: "#FCD34D",
                   fontWeight: 600,
                   letterSpacing: "0.025em",
                   cursor: 'default',
@@ -93,25 +91,6 @@ export default function Team() {
                 MEET THE TEAM
               </Typography>
             </div>
-
-            <div className="flex items-center">
-              <Button 
-                variant="contained"
-                onMouseEnter={() => setHoveredButton(true)}
-                onMouseLeave={() => setHoveredButton(false)}
-                sx={{ 
-                  backgroundColor: "#60A5FA",
-                  transition: 'all 0.3s ease',
-                  transform: hoveredButton ? 'translateY(-2px)' : 'none',
-                  boxShadow: hoveredButton ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
-                  '&:hover': {
-                    backgroundColor: "#3B82F6"
-                  }
-                }}
-              >
-                Login
-              </Button>
-            </div>
           </div>
         </nav>
       </header>
@@ -123,14 +102,14 @@ export default function Team() {
               <Card 
                 sx={{ 
                   height: '100%', 
-                  backgroundColor: 'transparent',
+                  backgroundColor: '#3B82F6',
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   transform: hoveredCard === index ? 'translateY(-8px)' : 'none',
                   boxShadow: hoveredCard === index ? '0 10px 20px rgba(0,0,0,0.1)' : 'none',
                   '&:hover': {
                     cursor: 'pointer'
                   },
-                  border: '1px solid rgba(148, 163, 184, 0.1)'
+                  border: '1px solid rgba(252, 211, 77, 0.2)'
                 }}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
@@ -143,21 +122,22 @@ export default function Team() {
                         width: 120, 
                         height: 120,
                         transition: 'transform 0.3s ease',
-                        transform: hoveredCard === index ? 'scale(1.1)' : 'scale(1)'
+                        transform: hoveredCard === index ? 'scale(1.1)' : 'scale(1)',
+                        backgroundColor: '#FCD34D'
                       }}
                     />
-                    <Typography variant="h6" sx={{ color: '#94A3B8' }}>
+                    <Typography variant="h6" sx={{ color: '#FCD34D' }}>
                       {member.name}
                     </Typography>
                     <div className="text-center">
                       {member.members.map((name, idx) => (
-                        <Typography key={idx} variant="subtitle1" sx={{ color: '#94A3B8' }}>
+                        <Typography key={idx} variant="subtitle1" sx={{ color: '#FCD34D' }}>
                           {name}
                         </Typography>
                       ))}
                     </div>
                     <div className="mt-4">
-                      <Typography variant="subtitle2" sx={{ color: '#94A3B8', fontWeight: 600, mb: 1 }}>
+                      <Typography variant="subtitle2" sx={{ color: '#FCD34D', fontWeight: 600, mb: 1 }}>
                         Key Contributions:
                       </Typography>
                       <ul className="list-disc pl-5">
@@ -179,7 +159,7 @@ export default function Team() {
           <Typography 
             variant="h5" 
             sx={{ 
-              color: '#94A3B8',
+              color: '#FCD34D',
               fontWeight: 600,
               textAlign: 'center',
               mb: 4,
@@ -200,7 +180,7 @@ export default function Team() {
               '&:hover': {
                 transform: 'scale(1.01)'
               },
-              border: '1px solid rgba(148, 163, 184, 0.1)'
+              border: '1px solid rgba(252, 211, 77, 0.2)'
             }}
           >
             <div className="flex justify-center">
@@ -216,7 +196,7 @@ export default function Team() {
             <Typography 
               variant="body2" 
               sx={{ 
-                color: '#94A3B8',
+                color: '#FCD34D',
                 textAlign: 'center',
                 mt: 2
               }}
@@ -227,10 +207,10 @@ export default function Team() {
         </div>
       </main>
 
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-[#94A3B8]">
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-[#FCD34D]">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4 transition-transform duration-200 hover:scale-105"
-          href="/"
+          href="/home"
         >
           <Image
             aria-hidden

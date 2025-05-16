@@ -6,10 +6,12 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isHovered, setIsHovered] = React.useState(false);
   const [showDetails, setShowDetails] = React.useState(false);
+  const router = useRouter();
 
   return (
     <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center h-screen p-4 gap-8 font-[family-name:var(--font-geist-sans)]">
@@ -18,18 +20,18 @@ export default function Home() {
           <div className="flex justify-between items-center h-12">
             <div className="flex items-center">
               <IconButton
-                size="small"
+                size="large"
                 edge="start"
                 aria-label="menu"
                 sx={{ 
-                  color: "#6B7280",
+                  color: "#FCD34D",
                   transition: 'transform 0.2s',
                   '&:hover': {
                     transform: 'rotate(45deg)'
                   }
                 }}
               >
-                <RocketLaunchIcon sx={{ fontSize: "24px" }} />
+                <RocketLaunchIcon sx={{ fontSize: "28px" }} />
               </IconButton>
             </div>
             
@@ -38,7 +40,7 @@ export default function Home() {
                 variant="h6" 
                 component="div"
                 sx={{ 
-                  color: "#6B7280",
+                  color: "#FCD34D",
                   fontWeight: 600,
                   letterSpacing: "0.025em",
                   fontSize: "1rem",
@@ -55,7 +57,7 @@ export default function Home() {
                   }
                 }}
               >
-                WATER ROCKET PRO
+                LEMON LAUNCHER
               </Typography>
             </div>
 
@@ -65,13 +67,15 @@ export default function Home() {
                 size="small"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={() => router.push('/product')}
                 sx={{ 
-                  backgroundColor: "#3B82F6",
+                  backgroundColor: "#FCD34D",
+                  color: "#1E3A8A",
                   transition: 'all 0.3s ease',
                   transform: isHovered ? 'translateY(-2px)' : 'none',
                   boxShadow: isHovered ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
                   '&:hover': {
-                    backgroundColor: "#2563EB"
+                    backgroundColor: "#F59E0B"
                   }
                 }}
               >
@@ -87,17 +91,27 @@ export default function Home() {
           <Typography 
             variant="h3" 
             sx={{ 
-              color: "#1F2937", 
+              color: "#FCD34D", 
               fontWeight: 700,
               transition: 'color 0.3s ease',
               '&:hover': {
-                color: "#3B82F6"
+                color: "#F59E0B"
               }
             }}
           >
             The Future of Water Rocketry
           </Typography>
-          <Typography variant="h6" sx={{ color: "#6B7280" }}>
+          <Typography 
+            variant="h6" 
+            sx={{ 
+              color: "#FCD34D",
+              fontWeight: 700,
+              transition: 'color 0.3s ease',
+              '&:hover': {
+                color: "#F59E0B"
+              }
+            }}
+          >
             Experience unprecedented height and stability
           </Typography>
           <div 
@@ -105,11 +119,12 @@ export default function Home() {
             onClick={() => setShowDetails(!showDetails)}
           >
             <Image
-              src="/Launch_of_Water_rocket.jpg"
-              alt="Water Rocket Pro"
+              src="/logo.png"
+              alt="Water Rocket Pro Logo"
               width={500}
               height={300}
               className="rounded-lg shadow-xl transition-transform duration-300 hover:scale-[1.02] mx-auto"
+              style={{ objectFit: 'contain' }}
             />
             {showDetails && (
               <div className="absolute inset-0 bg-black bg-opacity-75 rounded-lg flex items-center justify-center text-white p-4">
@@ -120,34 +135,73 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 w-full">
-          <div className="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-md cursor-pointer">
-            <Typography variant="subtitle1" sx={{ color: "#1F2937", fontWeight: 600 }}>
+          <div className="p-4 bg-[#3B82F6] rounded-lg transition-all duration-300 hover:bg-[#2563EB] hover:shadow-xl hover:scale-105 cursor-pointer">
+            <Typography variant="subtitle1" sx={{ 
+              color: "#FCD34D", 
+              fontWeight: 600,
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               200ft+ Height
             </Typography>
-            <Typography variant="body2" sx={{ color: "#6B7280" }}>
+            <Typography variant="body2" sx={{ 
+              color: "#FCD34D",
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               Optimized nozzle design
             </Typography>
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-md cursor-pointer">
-            <Typography variant="subtitle1" sx={{ color: "#1F2937", fontWeight: 600 }}>
+          <div className="p-4 bg-[#3B82F6] rounded-lg transition-all duration-300 hover:bg-[#2563EB] hover:shadow-xl hover:scale-105 cursor-pointer">
+            <Typography variant="subtitle1" sx={{ 
+              color: "#FCD34D", 
+              fontWeight: 600,
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               Stable Flight
             </Typography>
-            <Typography variant="body2" sx={{ color: "#6B7280" }}>
+            <Typography variant="body2" sx={{ 
+              color: "#FCD34D",
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               Perfect trajectory
             </Typography>
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:shadow-md cursor-pointer">
-            <Typography variant="subtitle1" sx={{ color: "#1F2937", fontWeight: 600 }}>
+          <div className="p-4 bg-[#3B82F6] rounded-lg transition-all duration-300 hover:bg-[#2563EB] hover:shadow-xl hover:scale-105 cursor-pointer">
+            <Typography variant="subtitle1" sx={{ 
+              color: "#FCD34D", 
+              fontWeight: 600,
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               Easy Assembly
             </Typography>
-            <Typography variant="body2" sx={{ color: "#6B7280" }}>
+            <Typography variant="body2" sx={{ 
+              color: "#FCD34D",
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)'
+              }
+            }}>
               Ready in 5 minutes
             </Typography>
           </div>
         </div>
       </main>
 
-      <footer className="flex gap-4 flex-wrap items-center justify-center text-[#6B7280] pb-2">
+      <footer className="flex gap-4 flex-wrap items-center justify-center text-[#FCD34D] pb-2">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-sm transition-transform duration-200 hover:scale-105"
           href="/specs"

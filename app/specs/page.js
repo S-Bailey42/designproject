@@ -12,6 +12,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 export default function Specifications() {
     const router = useRouter();
@@ -35,7 +36,7 @@ export default function Specifications() {
             tensileStrength: 60,
             elongation: 6,
             glassTemp: 60,
-            cost: 20,
+            cost: 16,
             printability: 'Excellent'
         },
         {
@@ -45,7 +46,7 @@ export default function Specifications() {
             tensileStrength: 40,
             elongation: 10,
             glassTemp: 105,
-            cost: 25,
+            cost: 20,
             printability: 'Good'
         },
         {
@@ -55,7 +56,7 @@ export default function Specifications() {
             tensileStrength: 50,
             elongation: 15,
             glassTemp: 80,
-            cost: 22,
+            cost: 18,
             printability: 'Very Good'
         },
         {
@@ -65,7 +66,7 @@ export default function Specifications() {
             tensileStrength: 45,
             elongation: 50,
             glassTemp: 50,
-            cost: 30,
+            cost: 24,
             printability: 'Moderate'
         },
         {
@@ -75,36 +76,124 @@ export default function Specifications() {
             tensileStrength: 60,
             elongation: 6,
             glassTemp: 150,
-            cost: 35,
+            cost: 28,
             printability: 'Fair'
         }
     ];
 
+    const componentMeasurements = [
+        {
+            name: 'Fin',
+            volume: '166268.21 mm³',
+            mass: '0.2078 kg',
+            weight: '2.039 N',
+            surfaceArea: '0.04 m²'
+        },
+        {
+            name: 'Peg',
+            volume: '1839.75 mm³',
+            mass: '0.00219493 kg',
+            weight: '0.2153 N',
+            surfaceArea: '0.00183975 m²'
+        },
+        {
+            name: 'Bottle',
+            volume: '2000 cm³',
+            mass: '2 kg',
+            weight: '19.62 N',
+            dimensions: '31.5cm × 11cm, Cap: 2.6cm'
+        }
+    ];
+
+    const rocketVariants = [
+        {
+            name: 'Cone 1 Hemisphere',
+            volume: '0.0076223 m³',
+            mass: '9.0272 kg',
+            weight: '88.557 N',
+            surfaceArea: '0.586 m²'
+        },
+        {
+            name: 'Cone 2 Arrowhead A (Short)',
+            volume: '0.0078924 m³',
+            mass: '9.3612 kg',
+            weight: '91.833 N',
+            surfaceArea: '0.612 m²'
+        },
+        {
+            name: 'Cone 2 Arrowhead B (Long)',
+            volume: '0.0096573 m³',
+            mass: '11.5712 kg',
+            weight: '113.513 N',
+            surfaceArea: '0.751 m²'
+        },
+        {
+            name: 'Cone 3 Blunt Arrowhead A (Short)',
+            volume: '0.0082257 m³',
+            mass: '9.7822 kg',
+            weight: '95.962 N',
+            surfaceArea: '0.638 m²'
+        },
+        {
+            name: 'Cone 3 Blunt Arrowhead B (Long)',
+            volume: '0.010260 m³',
+            mass: '12.3252 kg',
+            weight: '120.910 N',
+            surfaceArea: '0.799 m²'
+        },
+        {
+            name: 'Cone 4 FMJ A (Short)',
+            volume: '0.0097912 m³',
+            mass: '11.7392 kg',
+            weight: '115.162 N',
+            surfaceArea: '0.759 m²'
+        },
+        {
+            name: 'Cone 4 FMJ B (Long)',
+            volume: '0.012454 m³',
+            mass: '15.0672 kg',
+            weight: '147.809 N',
+            surfaceArea: '0.973 m²'
+        }
+    ];
+
     return (
-        <div className="min-h-screen p-4 md:p-8 bg-gray-50">
+        <div className="min-h-screen p-4 md:p-8 bg-gray-900 text-white">
             <div className="max-w-6xl mx-auto">
                 <div className="mb-8 flex items-center">
                     <IconButton
-                        onClick={() => router.push('/')}
-                        sx={{
-                            color: "#6B7280",
-                            marginRight: 2,
+                        size="small"
+                        edge="start"
+                        aria-label="menu"
+                        sx={{ 
+                            color: "#FCD34D",
+                            transition: 'transform 0.2s',
                             '&:hover': {
-                                backgroundColor: 'rgba(107, 114, 128, 0.1)'
+                                transform: 'rotate(45deg)'
+                            }
+                        }}
+                        onClick={() => router.push('/home')}
+                    >
+                        <RocketLaunchIcon sx={{ fontSize: "24px" }} />
+                    </IconButton>
+                    <Typography 
+                        variant="h6" 
+                        component="div"
+                        sx={{ 
+                            color: "#FCD34D",
+                            fontWeight: 600,
+                            letterSpacing: "0.025em",
+                            fontSize: "1rem",
+                            cursor: 'default',
+                            position: 'absolute',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            '&:hover': {
+                                transform: 'translateX(-50%) scale(1.05)'
                             }
                         }}
                     >
-                        <ArrowBackIcon />
-                    </IconButton>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            color: "#1F2937",
-                            fontWeight: 700,
-                            fontSize: { xs: '1.5rem', sm: '2rem' }
-                        }}
-                    >
-                        Technical Specifications
+                        SPECIFICATIONS
                     </Typography>
                 </div>
 
@@ -119,21 +208,25 @@ export default function Specifications() {
                         />
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <TableContainer
-                            component={Paper}
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
+                        <Typography
+                            variant="h6"
                             sx={{
-                                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-                                borderRadius: '0.5rem'
+                                color: "#FCD34D",
+                                fontWeight: 600,
+                                marginBottom: 2
                             }}
                         >
+                            Key Features
+                        </Typography>
+                        <TableContainer>
                             <Table>
                                 <TableHead>
-                                    <TableRow sx={{ backgroundColor: '#F3F4F6' }}>
-                                        <TableCell sx={{ fontWeight: 600, color: '#374151' }}>
+                                    <TableRow sx={{ backgroundColor: '#2563EB' }}>
+                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>
                                             Feature
                                         </TableCell>
-                                        <TableCell sx={{ fontWeight: 600, color: '#374151' }}>
+                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>
                                             Specification
                                         </TableCell>
                                     </TableRow>
@@ -143,12 +236,12 @@ export default function Specifications() {
                                         <TableRow
                                             key={index}
                                             sx={{
-                                                '&:hover': { backgroundColor: '#F9FAFB' },
+                                                '&:hover': { backgroundColor: '#2563EB' },
                                                 transition: 'background-color 0.2s'
                                             }}
                                         >
-                                            <TableCell sx={{ color: '#4B5563' }}>{spec.category}</TableCell>
-                                            <TableCell sx={{ color: '#6B7280' }}>{spec.detail}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{spec.category}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{spec.detail}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
@@ -156,18 +249,110 @@ export default function Specifications() {
                         </TableContainer>
                     </div>
 
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
                         <Typography
                             variant="h6"
                             sx={{
-                                color: "#1F2937",
+                                color: "#FCD34D",
+                                fontWeight: 600,
+                                marginBottom: 2
+                            }}
+                        >
+                            Component Measurements
+                        </Typography>
+                        <TableContainer>
+                            <Table size="small">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Component</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Volume</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Mass</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Weight</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Surface Area</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {componentMeasurements.map((component, index) => (
+                                        <TableRow key={index}>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.name}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.volume}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.mass}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.weight}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.surfaceArea}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                color: "#FCD34D",
+                                fontWeight: 600,
+                                marginBottom: 2
+                            }}
+                        >
+                            Rocket Variants Comparison
+                        </Typography>
+                        <TableContainer>
+                            <Table size="small">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Variant</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Volume</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Mass</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Weight</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Surface Area</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rocketVariants.map((variant, index) => (
+                                        <TableRow key={index}>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.name}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.volume}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.mass}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.weight}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.surfaceArea}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                color: "#FCD34D",
+                                fontWeight: 600,
+                                marginBottom: 2
+                            }}
+                        >
+                            Performance Specifications
+                        </Typography>
+                        <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
+                            <li>Compressed Air Pressure: 8 bar (800,000 Pascals)</li>
+                            <li>Thrust Generated: Approximately 1700N</li>
+                            <li>Air Resistance: Varies by cone cross-section</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                color: "#FCD34D",
                                 fontWeight: 600,
                                 marginBottom: 2
                             }}
                         >
                             Safety Features
                         </Typography>
-                        <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                        <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
                             <li>Pressure release valve for safety</li>
                             <li>Reinforced nozzle construction</li>
                             <li>Impact-resistant materials</li>
@@ -179,7 +364,7 @@ export default function Specifications() {
                         <Typography
                             variant="h5"
                             sx={{
-                                color: "#1F2937",
+                                color: "#FFFFFF",
                                 fontWeight: 600,
                                 marginBottom: 3
                             }}
@@ -190,7 +375,7 @@ export default function Specifications() {
                         <Typography
                             variant="body1"
                             sx={{
-                                color: "#4B5563",
+                                color: "#FFFFFF",
                                 marginBottom: 4
                             }}
                         >
@@ -206,20 +391,21 @@ export default function Specifications() {
                                     boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
                                     borderRadius: '0.5rem',
                                     marginBottom: 4,
-                                    minWidth: 650
+                                    minWidth: 650,
+                                    backgroundColor: '#1F2937'
                                 }}
                             >
                                 <Table size="small">
                                     <TableHead>
-                                        <TableRow sx={{ backgroundColor: '#F3F4F6' }}>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Material</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Density</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Young's Mod.</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Tensile Str.</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Elongation</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Glass Temp</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Cost</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#374151' }}>Printability</TableCell>
+                                        <TableRow sx={{ backgroundColor: '#374151' }}>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Material</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Density</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young's Mod.</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Tensile Str.</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Elongation</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Glass Temp</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Cost</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Printability</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -227,18 +413,18 @@ export default function Specifications() {
                                             <TableRow
                                                 key={index}
                                                 sx={{
-                                                    '&:hover': { backgroundColor: '#F9FAFB' },
+                                                    '&:hover': { backgroundColor: '#374151' },
                                                     transition: 'background-color 0.2s'
                                                 }}
                                             >
-                                                <TableCell sx={{ color: '#4B5563', fontWeight: 500 }}>{material.material}</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.density}</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.youngsModulus}</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.tensileStrength}</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.elongation}%</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.glassTemp}°C</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>${material.cost}</TableCell>
-                                                <TableCell sx={{ color: '#6B7280' }}>{material.printability}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontWeight: 500 }}>{material.material}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.density}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.youngsModulus}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.tensileStrength}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.elongation}%</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.glassTemp}°C</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>£{material.cost}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.printability}</TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
@@ -247,21 +433,21 @@ export default function Specifications() {
                         </div>
 
                         {/* Material Selection Rationale */}
-                        <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
                             <Typography
                                 variant="h6"
                                 sx={{
-                                    color: "#1F2937",
+                                    color: "#FCD34D",
                                     fontWeight: 600,
                                     marginBottom: 2
                                 }}
                             >
                                 Material Selection Rationale
                             </Typography>
-                            <Typography variant="body2" sx={{ color: '#4B5563', marginBottom: 2 }}>
+                            <Typography variant="body2" sx={{ color: '#FFFFFF', marginBottom: 2 }}>
                                 Based on our research, PLA emerges as an optimal choice for water rocket construction due to:
                             </Typography>
-                            <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                            <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
                                 <li>Ease of 3D Printing: PLA is well-known for its dimensional accuracy, low warping, and ease of use in academic settings.</li>
                                 <li>Cost-Effectiveness: Its affordability supports budget constraints while delivering consistent performance.</li>
                                 <li>Mechanical Performance: The combination of high stiffness and tensile strength makes PLA an excellent candidate for aerodynamic components that must remain precise under load.</li>
