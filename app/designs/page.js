@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import * as React from 'react';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/navigation';
@@ -11,6 +9,7 @@ import { useRouter } from 'next/navigation';
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const router = useRouter();
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const fins = [
     { src: "/fin 1.jfif", title: "Classic Fin Design" },
@@ -25,52 +24,51 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-4 gap-8 font-[family-name:var(--font-geist-sans)]">
-      <header className="mb-12 w-full">
+    <div className="grid grid-rows-[auto_1fr] items-center justify-items-center h-screen p-4 gap-8 font-[family-name:var(--font-geist-sans)]">
+      <header className="w-full">
         <nav className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <IconButton
-                size="small"
-                edge="start"
-                aria-label="menu"
+          <div className="flex justify-between items-center h-12">
+            <div className="flex-1 flex justify-center">
+              <Typography 
+                variant="h6" 
+                component="div"
                 sx={{ 
-                  color: "#FFFFFF",
+                  color: "#FCD34D",
+                  fontWeight: 600,
+                  letterSpacing: "0.025em",
+                  fontSize: "1rem",
+                  cursor: 'default',
+                  position: 'absolute',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
                   '&:hover': {
-                    transform: 'rotate(45deg)'
+                    transform: 'translateX(-50%) scale(1.05)'
                   }
                 }}
               >
-                <RocketLaunchIcon sx={{ fontSize: "24px" }} />
-              </IconButton>
-              <Typography 
-                variant="h4" 
-                sx={{ 
-                  color: "#FFFFFF",
-                  ml: 2,
-                  fontWeight: 600
-                }}
-              >
-                Design Gallery
+                DESIGNS
               </Typography>
             </div>
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: '#3B82F6',
-                '&:hover': {
-                  bgcolor: '#2563EB'
-                }
-              }}
-              onClick={() => router.push('/pre-order')}
-            >
-              Pre-order Now
-            </Button>
           </div>
         </nav>
       </header>
 
       <main className="max-w-7xl mx-auto">
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+            Assembly Drawing
+          </Typography>
+          <div className="relative h-[600px] rounded-xl shadow-lg overflow-hidden">
+            <Image
+              src="/assemblydrawing.png"
+              alt="Rocket Assembly Drawing"
+              fill
+              className="object-contain"
+              style={{ objectPosition: 'center' }}
+            />
+          </div>
+        </section>
+
         <section className="mb-16">
           <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
             Fin Designs
@@ -158,22 +156,6 @@ export default function Gallery() {
           </div>
         )}
       </main>
-
-      <footer className="flex gap-4 flex-wrap items-center justify-center text-[#FFFFFF] pb-2">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-sm transition-transform duration-200 hover:scale-105"
-          href="/home"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={14}
-            height={14}
-          />
-          Back to Home
-        </a>
-      </footer>
     </div>
   );
 }

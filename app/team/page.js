@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import * as React from 'react';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,13 +11,13 @@ import Grid from '@mui/material/Grid';
 const teamMembers = [
   {
     name: "Design Team",
-    members: ["Alexey (Lead)", "Partha", "Partha", "Arthur"],
+    members: ["Alexey (Lead)", "Alrich", "Partha", "Arthur"],
     contributions: [
       "Create the concept for the rocket package",
       "Design and test a functional rocket using Solidworks CAD and fluid simulation", 
       "3D print and test rocket to ensure package is safe and functional"
     ],
-    image: "/placeholder1.jpg"
+    image: "/designteam.jfif"
   },
   {
     name: "Research Team",
@@ -29,7 +27,7 @@ const teamMembers = [
       "Discover the ideal materials for the rocket",
       "Calculate costs involved with the manufacturing of the package"
     ],
-    image: "/placeholder2.jpg"
+    image: "/calcteam.jfif"
   },
   {
     name: "Communications and Marketing Team", 
@@ -40,7 +38,7 @@ const teamMembers = [
       "Create a unique identity for the team and product",
       "Handle feedback and adjust accordingly"
     ],
-    image: "/placeholder3.jpg"
+    image: "/webteam.jfif"
   }
 ];
 
@@ -53,23 +51,6 @@ export default function Team() {
       <header className="w-full">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <IconButton
-                size="large"
-                edge="start"
-                aria-label="menu"
-                sx={{ 
-                  color: "#FCD34D",
-                  transition: 'transform 0.2s',
-                  '&:hover': {
-                    transform: 'rotate(45deg)'
-                  }
-                }}
-              >
-                <RocketLaunchIcon sx={{ fontSize: "28px" }} />
-              </IconButton>
-            </div>
-            
             <div className="flex-1 flex justify-center">
               <Typography 
                 variant="h6" 
@@ -96,6 +77,29 @@ export default function Team() {
       </header>
 
       <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16">
+          <Typography 
+            variant="h5" 
+            sx={{ 
+              color: '#FCD34D',
+              fontWeight: 600,
+              textAlign: 'center',
+              mb: 4
+            }}
+          >
+            Our Team
+          </Typography>
+          <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/wholeteam.jfif"
+              alt="Whole Team"
+              fill
+              className="object-contain"
+              style={{ objectPosition: 'center' }}
+            />
+          </div>
+        </div>
+
         <Grid container spacing={4}>
           {teamMembers.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -206,35 +210,6 @@ export default function Team() {
           </Card>
         </div>
       </main>
-
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-[#FCD34D]">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 transition-transform duration-200 hover:scale-105"
-          href="/home"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Home
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 transition-transform duration-200 hover:scale-105"
-          href="/product"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Product
-        </a>
-      </footer>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 'use client';
 
 import Image from "next/image";
+import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Button from '@mui/material/Button';
 import { useRouter } from 'next/navigation';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,10 +12,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
-export default function Specifications() {
+export default function Specs() {
     const router = useRouter();
+    const [isHovered, setIsHovered] = React.useState(false);
 
     const specifications = [
         { category: 'Dimensions', detail: '30cm height × 10cm diameter' },
@@ -159,76 +159,56 @@ export default function Specifications() {
 
     return (
         <div className="min-h-screen p-4 md:p-8 bg-gray-900 text-white">
-            <div className="max-w-6xl mx-auto">
-                <div className="mb-8 flex items-center">
-                    <IconButton
-                        size="small"
-                        edge="start"
-                        aria-label="menu"
-                        sx={{ 
-                            color: "#FCD34D",
-                            transition: 'transform 0.2s',
-                            '&:hover': {
-                                transform: 'rotate(45deg)'
-                            }
-                        }}
-                        onClick={() => router.push('/home')}
-                    >
-                        <RocketLaunchIcon sx={{ fontSize: "24px" }} />
-                    </IconButton>
-                    <Typography 
-                        variant="h6" 
-                        component="div"
-                        sx={{ 
-                            color: "#FCD34D",
-                            fontWeight: 600,
-                            letterSpacing: "0.025em",
-                            fontSize: "1rem",
-                            cursor: 'default',
-                            position: 'absolute',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            '&:hover': {
-                                transform: 'translateX(-50%) scale(1.05)'
-                            }
-                        }}
-                    >
-                        SPECIFICATIONS
-                    </Typography>
-                </div>
+            <header className="w-full mb-8">
+                <nav className="max-w-7xl mx-auto px-4">
+                    <div className="flex justify-between items-center h-12">
+                        <div className="flex-1 flex justify-center">
+                            <Typography 
+                                variant="h6" 
+                                component="div"
+                                sx={{ 
+                                    color: "#FCD34D",
+                                    fontWeight: 600,
+                                    letterSpacing: "0.025em",
+                                    fontSize: "1rem",
+                                    cursor: 'default',
+                                    position: 'absolute',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    '&:hover': {
+                                        transform: 'translateX(-50%) scale(1.05)'
+                                    }
+                                }}
+                            >
+                                SPECIFICATIONS
+                            </Typography>
+                        </div>
+                    </div>
+                </nav>
+            </header>
 
-                <div className="grid gap-8">
-                    <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg">
+            <div className="max-w-6xl mx-auto">
+                <div className="mb-8">
+                    <div className="relative h-[600px] rounded-lg overflow-hidden shadow-lg mb-8">
                         <Image
-                            src="/Launch_of_Water_rocket.jpg"
-                            alt="Water Rocket Technical Diagram"
+                            src="/rocketfinal.jfif"
+                            alt="Water Rocket Final Design"
                             fill
-                            style={{ objectFit: 'cover' }}
-                            className="transition-transform duration-300 hover:scale-105"
+                            className="object-contain"
+                            style={{ objectPosition: 'center' }}
                         />
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                color: "#FCD34D",
-                                fontWeight: 600,
-                                marginBottom: 2
-                            }}
-                        >
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Key Features
                         </Typography>
                         <TableContainer>
                             <Table>
                                 <TableHead>
                                     <TableRow sx={{ backgroundColor: '#2563EB' }}>
-                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>
-                                            Feature
-                                        </TableCell>
-                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>
-                                            Specification
-                                        </TableCell>
+                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>Feature</TableCell>
+                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>Specification</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -249,15 +229,8 @@ export default function Specifications() {
                         </TableContainer>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                color: "#FCD34D",
-                                fontWeight: 600,
-                                marginBottom: 2
-                            }}
-                        >
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Component Measurements
                         </Typography>
                         <TableContainer>
@@ -286,15 +259,8 @@ export default function Specifications() {
                         </TableContainer>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                color: "#FCD34D",
-                                fontWeight: 600,
-                                marginBottom: 2
-                            }}
-                        >
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Rocket Variants Comparison
                         </Typography>
                         <TableContainer>
@@ -323,15 +289,8 @@ export default function Specifications() {
                         </TableContainer>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                color: "#FCD34D",
-                                fontWeight: 600,
-                                marginBottom: 2
-                            }}
-                        >
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Performance Specifications
                         </Typography>
                         <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
@@ -341,15 +300,8 @@ export default function Specifications() {
                         </ul>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                        <Typography
-                            variant="h6"
-                            sx={{
-                                color: "#FCD34D",
-                                fontWeight: 600,
-                                marginBottom: 2
-                            }}
-                        >
+                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Safety Features
                         </Typography>
                         <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
@@ -361,25 +313,12 @@ export default function Specifications() {
                     </div>
 
                     <div className="mt-8">
-                        <Typography
-                            variant="h5"
-                            sx={{
-                                color: "#FFFFFF",
-                                fontWeight: 600,
-                                marginBottom: 3
-                            }}
-                        >
+                        <Typography variant="h5" sx={{ color: "#FFFFFF", fontWeight: 600, mb: 3 }}>
                             Materials Research
                         </Typography>
 
-                        <Typography
-                            variant="body1"
-                            sx={{
-                                color: "#FFFFFF",
-                                marginBottom: 4
-                            }}
-                        >
-                            We had to idenitfy a material that provides high stiffness, low density, excellent dimensional accuracy,
+                        <Typography variant="body1" sx={{ color: "#FFFFFF", mb: 4 }}>
+                            We had to identify a material that provides high stiffness, low density, excellent dimensional accuracy,
                             and reliable 3D printability. The following table presents five candidate materials and their key properties.
                             These values have been gathered from aerospace materials databases and published literature.
                         </Typography>
@@ -432,19 +371,11 @@ export default function Specifications() {
                             </TableContainer>
                         </div>
 
-                        {/* Material Selection Rationale */}
                         <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                            <Typography
-                                variant="h6"
-                                sx={{
-                                    color: "#FCD34D",
-                                    fontWeight: 600,
-                                    marginBottom: 2
-                                }}
-                            >
+                            <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                                 Material Selection Rationale
                             </Typography>
-                            <Typography variant="body2" sx={{ color: '#FFFFFF', marginBottom: 2 }}>
+                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 2 }}>
                                 Based on our research, PLA emerges as an optimal choice for water rocket construction due to:
                             </Typography>
                             <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
