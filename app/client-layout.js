@@ -16,7 +16,7 @@ export default function ClientLayout({ children }) {
   };
 
   const navItems = [
-    { name: 'Home', path: '/home' },
+    { name: 'Home', path: '/' },
     { name: 'Team', path: '/team' },
     { name: 'Specs', path: '/specs' },
     { name: 'Designs', path: '/designs' },
@@ -51,7 +51,7 @@ export default function ClientLayout({ children }) {
       >
         <div className="p-4">
           <div className="mb-8">
-            <Link href="/home">
+            <Link href="/">
               <div className="flex items-center justify-center">
                 <span className="text-[#FCD34D] font-semibold text-xl">Water Rocket</span>
               </div>
