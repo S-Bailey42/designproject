@@ -18,90 +18,110 @@ export default function Specs() {
     const [isHovered, setIsHovered] = React.useState(false);
 
     const specifications = [
-        { category: 'Dimensions', detail: '30cm height × 10cm diameter' },
+        { category: 'Dimensions', detail: '36cm height × 10.2cm diameter' },
         { category: 'Weight (Empty)', detail: '250g' },
         { category: 'Water Capacity', detail: '2 liters' },
-        { category: 'Max Pressure', detail: '80 PSI' },
+        { category: 'Max Pressure', detail: '5 bar' },
         { category: 'Flight Time', detail: '15-20 seconds' },
         { category: 'Max Height', detail: '200+ feet' },
-        { category: 'Recovery System', detail: 'Parachute deployment (maybe)' },
-        { category: 'Construction', detail: 'PLA' },
+        { category: 'Construction', detail: 'PET' },
     ];
 
     const materialsData = [
         {
-            material: 'PLA',
-            density: 1240,
-            youngsModulus: 3.5,
-            tensileStrength: 60,
-            elongation: 6,
-            glassTemp: 60,
-            cost: 16,
-            printability: 'Excellent'
+            material: 'PET',
+            density: 1350,
+            youngsModulus: 9,
+            tensileStrength: 150,
+            yieldStrength: 40,
+            elongation: 32,
+            cost: 1.52,
+            printability: 'Very good'
         },
         {
-            material: 'ABS',
-            density: 1040,
-            youngsModulus: 2.1,
-            tensileStrength: 40,
-            elongation: 10,
-            glassTemp: 105,
-            cost: 20,
+            material: 'HDPE',
+            density: 950,
+            youngsModulus: 0.8,
+            tensileStrength: 28,
+            yieldStrength: 33,
+            elongation: 367,
+            cost: 0.93,
             printability: 'Good'
         },
         {
-            material: 'PETG',
-            density: 1270,
-            youngsModulus: 2.2,
-            tensileStrength: 50,
-            elongation: 15,
-            glassTemp: 80,
-            cost: 18,
-            printability: 'Very Good'
+            material: 'LDPE',
+            density: 920,
+            youngsModulus: 0.3,
+            tensileStrength: 20,
+            yieldStrength: 10,
+            elongation: 200,
+            cost: 1.19,
+            printability: 'Do-able'
         },
         {
-            material: 'Nylon',
-            density: 1150,
-            youngsModulus: 1.2,
-            tensileStrength: 45,
-            elongation: 50,
-            glassTemp: 50,
-            cost: 24,
-            printability: 'Moderate'
+            material: 'LDF',
+            density: 350,
+            youngsModulus: 0,
+            tensileStrength: 1.94,
+            yieldStrength: 0,
+            elongation: 0,
+            cost: 1.94,
+            printability: 'No (machinable)'
         },
         {
-            material: 'PC',
-            density: 1200,
-            youngsModulus: 2.0,
-            tensileStrength: 60,
-            elongation: 6,
-            glassTemp: 150,
-            cost: 28,
-            printability: 'Fair'
+            material: 'MDF',
+            density: 700,
+            youngsModulus: 4,
+            tensileStrength: 18,
+            yieldStrength: 0,
+            elongation: 0,
+            cost: 'N/A',
+            printability: 'No (machinable)'
+        },
+        {
+            material: 'HDF',
+            density: 900,
+            youngsModulus: 10.5,
+            tensileStrength: 35,
+            yieldStrength: 25,
+            elongation: 0,
+            cost: 'N/A',
+            printability: 'No (machinable)'
         }
     ];
 
     const componentMeasurements = [
         {
-            name: 'Fin',
-            volume: '166268.21 mm³',
-            mass: '0.2078 kg',
-            weight: '2.039 N',
-            surfaceArea: '0.04 m²'
-        },
-        {
-            name: 'Peg',
-            volume: '1839.75 mm³',
-            mass: '0.00219493 kg',
-            weight: '0.2153 N',
-            surfaceArea: '0.00183975 m²'
-        },
-        {
             name: 'Bottle',
             volume: '2000 cm³',
-            mass: '2 kg',
-            weight: '19.62 N',
-            dimensions: '31.5cm × 11cm, Cap: 2.6cm'
+            mass: '0.05 kg',
+            weight: '0.49 N',
+            dimensions: '36cm × 10.2cm',
+            surfaceArea: 'N/A'
+        },
+        {
+            name: 'Cone',
+            volume: '55125.363 mm³',
+            mass: '0.25 kg',
+            weight: '2.45 N',
+            dimensions: '10.5cm × 11.4cm',
+            surfaceArea: '0.001746 m²'
+        },
+        {
+            name: 'Fin Sleeve',
+            volume: '184705.679 mm³',
+            mass: '0.231 kg',
+            weight: '2.27 N',
+            dimensions: '11.7cm × 11cm',
+            surfaceArea: '0.00351383 m²'
+        },
+        {
+            name: 'Fin (Single)',
+            volume: '19241.25 mm³',
+            mass: '0.02 kg',
+            weight: '0.196 N',
+            dimensions: '10cm-3cm × 7.5cm',
+            surfaceArea: 'N/A'
         }
     ];
 
@@ -156,6 +176,19 @@ export default function Specs() {
             surfaceArea: '0.973 m²'
         }
     ];
+
+    const materialSelection = {
+        title: "Material Selection Analysis",
+        description: "After extensive evaluation of various materials, PET (Polyethylene terephthalate) was selected as the optimal choice for our water rocket. Key factors in this decision include:",
+        points: [
+            "Superior tensile strength (150 MPa) compared to alternatives",
+            "Excellent 3D printability for easy manufacturing",
+            "Cost-effective at $1.52/kg",
+            "High density (1350 kg/m³) providing structural integrity",
+            "Good balance of strength and flexibility (32% elongation)"
+        ],
+        conclusion: "While other materials like HDPE and LDPE offer good printability, their lower tensile strength makes them less suitable for high-pressure applications. Wood-based materials (LDF, MDF, HDF) were excluded due to their lower tensile strength and higher manufacturing complexity."
+    };
 
     return (
         <div className="min-h-screen p-4 md:p-8 bg-gray-900 text-white">
@@ -233,6 +266,9 @@ export default function Specs() {
                         <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
                             Component Measurements
                         </Typography>
+                        <Typography variant="body2" sx={{ color: "#FCD34D", mb: 3 }}>
+                            Note: Fin measurements are for a single fin. The rocket uses 4 identical fins.
+                        </Typography>
                         <TableContainer>
                             <Table size="small">
                                 <TableHead>
@@ -241,6 +277,7 @@ export default function Specs() {
                                         <TableCell sx={{ color: '#FCD34D' }}>Volume</TableCell>
                                         <TableCell sx={{ color: '#FCD34D' }}>Mass</TableCell>
                                         <TableCell sx={{ color: '#FCD34D' }}>Weight</TableCell>
+                                        <TableCell sx={{ color: '#FCD34D' }}>Dimensions</TableCell>
                                         <TableCell sx={{ color: '#FCD34D' }}>Surface Area</TableCell>
                                     </TableRow>
                                 </TableHead>
@@ -251,6 +288,7 @@ export default function Specs() {
                                             <TableCell sx={{ color: '#FCD34D' }}>{component.volume}</TableCell>
                                             <TableCell sx={{ color: '#FCD34D' }}>{component.mass}</TableCell>
                                             <TableCell sx={{ color: '#FCD34D' }}>{component.weight}</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D' }}>{component.dimensions}</TableCell>
                                             <TableCell sx={{ color: '#FCD34D' }}>{component.surfaceArea}</TableCell>
                                         </TableRow>
                                     ))}
@@ -308,7 +346,6 @@ export default function Specs() {
                             <li>Pressure release valve for safety</li>
                             <li>Reinforced nozzle construction</li>
                             <li>Impact-resistant materials</li>
-                            <li>Fail-safe parachute deployment mechanism</li>
                         </ul>
                     </div>
 
@@ -338,12 +375,12 @@ export default function Specs() {
                                     <TableHead>
                                         <TableRow sx={{ backgroundColor: '#374151' }}>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Material</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Density</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young's Mod.</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Tensile Str.</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Elongation</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Glass Temp</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Cost</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Density (kg/m³)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young's Modulus (GPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Tensile Strength (MPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Yield Strength (MPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Elongation (%)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Cost (USD/kg)</TableCell>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Printability</TableCell>
                                         </TableRow>
                                     </TableHead>
@@ -360,9 +397,9 @@ export default function Specs() {
                                                 <TableCell sx={{ color: '#FFFFFF' }}>{material.density}</TableCell>
                                                 <TableCell sx={{ color: '#FFFFFF' }}>{material.youngsModulus}</TableCell>
                                                 <TableCell sx={{ color: '#FFFFFF' }}>{material.tensileStrength}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.elongation}%</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.glassTemp}°C</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>£{material.cost}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.yieldStrength}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.elongation}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.cost}</TableCell>
                                                 <TableCell sx={{ color: '#FFFFFF' }}>{material.printability}</TableCell>
                                             </TableRow>
                                         ))}
@@ -376,14 +413,16 @@ export default function Specs() {
                                 Material Selection Rationale
                             </Typography>
                             <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 2 }}>
-                                Based on our research, PLA emerges as an optimal choice for water rocket construction due to:
+                                {materialSelection.description}
                             </Typography>
-                            <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
-                                <li>Ease of 3D Printing: PLA is well-known for its dimensional accuracy, low warping, and ease of use in academic settings.</li>
-                                <li>Cost-Effectiveness: Its affordability supports budget constraints while delivering consistent performance.</li>
-                                <li>Mechanical Performance: The combination of high stiffness and tensile strength makes PLA an excellent candidate for aerodynamic components that must remain precise under load.</li>
-                                <li>Surface Finish: Achieving a smooth surface finish post-printing is critical for reducing aerodynamic drag—a key factor for flight performance.</li>
+                            <ul className="list-disc pl-6 space-y-2 text-[#FCD34D] mb-4">
+                                {materialSelection.points.map((point, index) => (
+                                    <li key={index} className="mb-2">{point}</li>
+                                ))}
                             </ul>
+                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 3 }}>
+                                {materialSelection.conclusion}
+                            </Typography>
                         </div>
                     </div>
                 </div>

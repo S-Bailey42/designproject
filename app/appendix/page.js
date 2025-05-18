@@ -49,6 +49,36 @@ export default function Appendix() {
             </div>
           </div>
         </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
+            Safety Information and Instructions
+          </Typography>
+          <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
+            <div className="w-full h-[800px]">
+              <iframe
+                src="/safety+instructions.pdf"
+                className="w-full h-full rounded-lg"
+                title="Safety and Instructions PDF"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
+            Risk Assessment
+          </Typography>
+          <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
+            <div className="w-full h-[800px]">
+              <iframe
+                src="/RISK ASSESSMENT.pdf"
+                className="w-full h-full rounded-lg"
+                title="Risk Assessment PDF"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

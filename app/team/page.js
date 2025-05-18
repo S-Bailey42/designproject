@@ -146,7 +146,7 @@ export default function Team() {
                       </Typography>
                       <ul className="list-disc pl-5">
                         {member.contributions.map((contribution, idx) => (
-                          <li key={idx} className="text-sm text-slate-400 mb-1">
+                          <li key={idx} className="text-sm text-slate-200 mb-1">
                             {contribution}
                           </li>
                         ))}

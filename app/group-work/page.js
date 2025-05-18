@@ -37,21 +37,6 @@ export default function GroupWork() {
       <div className="max-w-6xl mx-auto">
         <section className="mb-16">
           <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
-            Risk Assessment
-          </Typography>
-          <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
-            <div className="w-full h-[800px]">
-              <iframe
-                src="/RISK ASSESSMENT.pdf"
-                className="w-full h-full rounded-lg"
-                title="Risk Assessment PDF"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
             Progress Reports
           </Typography>
           <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">

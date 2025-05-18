@@ -58,14 +58,60 @@ export default function Gallery() {
           <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
             Assembly Drawing
           </Typography>
-          <div className="relative h-[600px] rounded-xl shadow-lg overflow-hidden">
-            <Image
-              src="/assemblydrawing.png"
-              alt="Rocket Assembly Drawing"
-              fill
-              className="object-contain"
-              style={{ objectPosition: 'center' }}
-            />
+          <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="w-full h-[800px]">
+              <iframe
+                src="/RocketDrawing.pdf"
+                className="w-full h-full rounded-lg"
+                title="Assembly Drawing PDF"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+            Part Drawings
+          </Typography>
+          <div className="space-y-8">
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+                Cone Part Drawing
+              </Typography>
+              <div className="w-full h-[800px]">
+                <iframe
+                  src="/NOSE CONE DRAWING.pdf"
+                  className="w-full h-full rounded-lg"
+                  title="Cone Part Drawing PDF"
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+                Sleeve Part Drawing
+              </Typography>
+              <div className="w-full h-[800px]">
+                <iframe
+                  src="/Fin Sleeve PART DRAWING.pdf"
+                  className="w-full h-full rounded-lg"
+                  title="Sleeve Part Drawing PDF"
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+                Fin Part Drawing
+              </Typography>
+              <div className="w-full h-[800px]">
+                <iframe
+                  src="/Fin DRAWING.pdf"
+                  className="w-full h-full rounded-lg"
+                  title="Fin Part Drawing PDF"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -124,6 +170,48 @@ export default function Gallery() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+            3D Printing Process
+          </Typography>
+          <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-[600px]">
+              <video
+                src="/3d-printing.mp4"
+                controls
+                className="w-full h-full object-contain"
+                title="3D Printing Process"
+              />
+            </div>
+            <div className="p-4">
+              <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
+                Watch the 3D printing process of our rocket components, showcasing the precision and quality of our manufacturing process.
+              </Typography>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+            Fluid Dynamics Testing
+          </Typography>
+          <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-[600px]">
+              <video
+                src="/fluid-test.mp4"
+                controls
+                className="w-full h-full object-contain"
+                title="Fluid Dynamics Testing"
+              />
+            </div>
+            <div className="p-4">
+              <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
+                Observe our fluid dynamics testing process, demonstrating the optimization of air flow and pressure for maximum thrust.
+              </Typography>
+            </div>
           </div>
         </section>
 
