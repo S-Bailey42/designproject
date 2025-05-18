@@ -24,10 +24,10 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="grid grid-rows-[auto_1fr] items-center justify-items-center h-screen p-4 gap-8 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr] items-center justify-items-center min-h-screen p-2 sm:p-4 gap-4 sm:gap-8 font-[family-name:var(--font-geist-sans)]">
       <header className="w-full">
-        <nav className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-12">
+        <nav className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="flex justify-between items-center h-12 sm:h-16">
             <div className="flex-1 flex justify-center">
               <Typography 
                 variant="h6" 
@@ -36,7 +36,7 @@ export default function Gallery() {
                   color: "#FCD34D",
                   fontWeight: 600,
                   letterSpacing: "0.025em",
-                  fontSize: "1rem",
+                  fontSize: { xs: '0.875rem', sm: '1rem' },
                   cursor: 'default',
                   position: 'absolute',
                   left: '50%',
@@ -53,13 +53,13 @@ export default function Gallery() {
         </nav>
       </header>
 
-      <main className="max-w-7xl mx-auto">
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+      <main className="max-w-7xl mx-auto w-full px-2 sm:px-4">
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             Assembly Drawing
           </Typography>
           <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-            <div className="w-full h-[800px]">
+            <div className="w-full h-[400px] sm:h-[600px] md:h-[800px]">
               <iframe
                 src="/RocketDrawing.pdf"
                 className="w-full h-full rounded-lg"
@@ -69,16 +69,16 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             Part Drawings
           </Typography>
-          <div className="space-y-8">
+          <div className="space-y-4 sm:space-y-8">
             <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563', fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                 Cone Part Drawing
               </Typography>
-              <div className="w-full h-[800px]">
+              <div className="w-full h-[400px] sm:h-[600px] md:h-[800px]">
                 <iframe
                   src="/NOSE CONE DRAWING.pdf"
                   className="w-full h-full rounded-lg"
@@ -88,10 +88,10 @@ export default function Gallery() {
             </div>
 
             <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563', fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                 Sleeve Part Drawing
               </Typography>
-              <div className="w-full h-[800px]">
+              <div className="w-full h-[400px] sm:h-[600px] md:h-[800px]">
                 <iframe
                   src="/Fin Sleeve PART DRAWING.pdf"
                   className="w-full h-full rounded-lg"
@@ -101,10 +101,10 @@ export default function Gallery() {
             </div>
 
             <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563' }}>
+              <Typography variant="h6" sx={{ color: "#FFFFFF", p: 2, borderBottom: '1px solid #4B5563', fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                 Fin Part Drawing
               </Typography>
-              <div className="w-full h-[800px]">
+              <div className="w-full h-[400px] sm:h-[600px] md:h-[800px]">
                 <iframe
                   src="/Fin DRAWING.pdf"
                   className="w-full h-full rounded-lg"
@@ -115,18 +115,18 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             Fin Designs
           </Typography>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {fins.map((fin, index) => (
               <div 
                 key={index}
                 className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
                 onClick={() => setSelectedImage(fin)}
               >
-                <div className="relative h-64">
+                <div className="relative h-48 sm:h-64">
                   <Image
                     src={fin.src}
                     alt={fin.title}
@@ -134,8 +134,8 @@ export default function Gallery() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <Typography variant="h6" sx={{ color: "#FFFFFF" }}>
+                <div className="p-3 sm:p-4">
+                  <Typography variant="h6" sx={{ color: "#FFFFFF", fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                     {fin.title}
                   </Typography>
                 </div>
@@ -144,18 +144,18 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section>
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             Nosecone Designs
           </Typography>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {nosecones.map((nose, index) => (
               <div 
                 key={index}
                 className="bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105"
                 onClick={() => setSelectedImage(nose)}
               >
-                <div className="relative h-64">
+                <div className="relative h-48 sm:h-64">
                   <Image
                     src={nose.src}
                     alt={nose.title}
@@ -163,8 +163,8 @@ export default function Gallery() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <Typography variant="h6" sx={{ color: "#FFFFFF" }}>
+                <div className="p-3 sm:p-4">
+                  <Typography variant="h6" sx={{ color: "#FFFFFF", fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                     {nose.title}
                   </Typography>
                 </div>
@@ -173,12 +173,12 @@ export default function Gallery() {
           </div>
         </section>
 
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             3D Printing Process
           </Typography>
           <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-            <div className="relative h-[600px]">
+            <div className="relative h-[300px] sm:h-[400px] md:h-[600px]">
               <video
                 src="/3d-printing.mp4"
                 controls
@@ -186,20 +186,20 @@ export default function Gallery() {
                 title="3D Printing Process"
               />
             </div>
-            <div className="p-4">
-              <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
+            <div className="p-3 sm:p-4">
+              <Typography variant="body1" sx={{ color: "#FFFFFF", fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                 Watch the 3D printing process of our rocket components, showcasing the precision and quality of our manufacturing process.
               </Typography>
             </div>
           </div>
         </section>
 
-        <section className="mb-16">
-          <Typography variant="h5" sx={{ mb: 4, color: "#FFFFFF", fontWeight: 600 }}>
+        <section className="mb-8 sm:mb-16">
+          <Typography variant="h5" sx={{ mb: 3, sm: { mb: 4 }, color: "#FFFFFF", fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
             Fluid Dynamics Testing
           </Typography>
           <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-            <div className="relative h-[600px]">
+            <div className="relative h-[300px] sm:h-[400px] md:h-[600px]">
               <video
                 src="/fluid-test.mp4"
                 controls
@@ -207,8 +207,8 @@ export default function Gallery() {
                 title="Fluid Dynamics Testing"
               />
             </div>
-            <div className="p-4">
-              <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
+            <div className="p-3 sm:p-4">
+              <Typography variant="body1" sx={{ color: "#FFFFFF", fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                 Observe our fluid dynamics testing process, demonstrating the optimization of air flow and pressure for maximum thrust.
               </Typography>
             </div>
@@ -217,10 +217,10 @@ export default function Gallery() {
 
         {selectedImage && (
           <div 
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-2 sm:p-4 z-50"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative max-w-4xl w-full h-[80vh]">
+            <div className="relative max-w-4xl w-full h-[60vh] sm:h-[80vh]">
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.title}
@@ -235,7 +235,8 @@ export default function Gallery() {
                   bottom: "20px", 
                   width: "100%",
                   textAlign: "center",
-                  textShadow: "2px 2px 4px rgba(0,0,0,0.5)"
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  fontSize: { xs: '1.25rem', sm: '1.5rem' }
                 }}
               >
                 {selectedImage.title}

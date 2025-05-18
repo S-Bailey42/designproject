@@ -47,10 +47,10 @@ export default function Team() {
   const [hoveredCard, setHoveredCard] = React.useState(null);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-4 sm:p-8 pb-20 gap-8 sm:gap-16 font-[family-name:var(--font-geist-sans)]">
       <header className="w-full">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+        <nav className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-12 sm:h-16">
             <div className="flex-1 flex justify-center">
               <Typography 
                 variant="h6" 
@@ -59,6 +59,7 @@ export default function Team() {
                   color: "#FCD34D",
                   fontWeight: 600,
                   letterSpacing: "0.025em",
+                  fontSize: { xs: '0.875rem', sm: '1rem' },
                   cursor: 'default',
                   transition: 'transform 0.2s',
                   position: 'absolute',
@@ -76,20 +77,22 @@ export default function Team() {
         </nav>
       </header>
 
-      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
+      <main className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="mb-8 sm:mb-16">
           <Typography 
             variant="h5" 
             sx={{ 
               color: '#FCD34D',
               fontWeight: 600,
               textAlign: 'center',
-              mb: 4
+              mb: 3,
+              sm: { mb: 4 },
+              fontSize: { xs: '1.25rem', sm: '1.5rem' }
             }}
           >
             Our Team
           </Typography>
-          <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
+          <div className="relative w-full h-[300px] sm:h-[500px] rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/wholeteam.jpg"
               alt="Whole Team"
@@ -100,7 +103,7 @@ export default function Team() {
           </div>
         </div>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={2} sm:spacing={4}>
           {teamMembers.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card 
@@ -118,35 +121,56 @@ export default function Team() {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <CardContent>
-                  <div className="flex flex-col items-center gap-4">
+                <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+                  <div className="flex flex-col items-center gap-3 sm:gap-4">
                     <Avatar
                       src={member.image}
                       sx={{ 
-                        width: 120, 
-                        height: 120,
+                        width: { xs: 80, sm: 120 }, 
+                        height: { xs: 80, sm: 120 },
                         transition: 'transform 0.3s ease',
                         transform: hoveredCard === index ? 'scale(1.1)' : 'scale(1)',
                         backgroundColor: '#FCD34D'
                       }}
                     />
-                    <Typography variant="h6" sx={{ color: '#FCD34D' }}>
+                    <Typography 
+                      variant="h6" 
+                      sx={{ 
+                        color: '#FCD34D',
+                        fontSize: { xs: '1rem', sm: '1.25rem' }
+                      }}
+                    >
                       {member.name}
                     </Typography>
                     <div className="text-center">
                       {member.members.map((name, idx) => (
-                        <Typography key={idx} variant="subtitle1" sx={{ color: '#FCD34D' }}>
+                        <Typography 
+                          key={idx} 
+                          variant="subtitle1" 
+                          sx={{ 
+                            color: '#FCD34D',
+                            fontSize: { xs: '0.875rem', sm: '1rem' }
+                          }}
+                        >
                           {name}
                         </Typography>
                       ))}
                     </div>
-                    <div className="mt-4">
-                      <Typography variant="subtitle2" sx={{ color: '#FCD34D', fontWeight: 600, mb: 1 }}>
+                    <div className="mt-2 sm:mt-4">
+                      <Typography 
+                        variant="subtitle2" 
+                        sx={{ 
+                          color: '#FCD34D', 
+                          fontWeight: 600, 
+                          mb: 1,
+                          fontSize: { xs: '0.875rem', sm: '1rem' }
+                        }}
+                      >
                         Key Contributions:
                       </Typography>
-                      <ul className="list-disc pl-5">
+                      <ul className="list-disc pl-4 sm:pl-5">
                         {member.contributions.map((contribution, idx) => (
-                          <li key={idx} className="text-sm text-slate-200 mb-1">
+                          <li key={idx} className="text-xs sm:text-sm text-slate-200 mb-1">
                             {contribution}
                           </li>
                         ))}
@@ -159,15 +183,16 @@ export default function Team() {
           ))}
         </Grid>
 
-        <div className="mt-16">
+        <div className="mt-8 sm:mt-16">
           <Typography 
             variant="h5" 
             sx={{ 
               color: '#FCD34D',
               fontWeight: 600,
               textAlign: 'center',
-              mb: 4,
-              mt: 2,
+              mb: 3,
+              sm: { mb: 4 },
+              fontSize: { xs: '1.25rem', sm: '1.5rem' },
               transition: 'color 0.3s ease',
               '&:hover': {
                 color: "#60A5FA"
@@ -179,7 +204,7 @@ export default function Team() {
           <Card 
             sx={{ 
               backgroundColor: 'transparent', 
-              p: 2,
+              p: { xs: 1, sm: 2 },
               transition: 'transform 0.3s ease',
               '&:hover': {
                 transform: 'scale(1.01)'
@@ -193,7 +218,7 @@ export default function Team() {
                 alt="Project Gantt Chart"
                 width={1000}
                 height={500}
-                className="rounded-lg shadow-md transition-transform duration-300 hover:scale-[1.02]"
+                className="rounded-lg shadow-md transition-transform duration-300 hover:scale-[1.02] w-full h-auto"
                 style={{ objectFit: 'contain' }}
               />
             </div>
@@ -202,7 +227,8 @@ export default function Team() {
               sx={{ 
                 color: '#FCD34D',
                 textAlign: 'center',
-                mt: 2
+                mt: 2,
+                fontSize: { xs: '0.75rem', sm: '0.875rem' }
               }}
             >
               Our project timeline showing key milestones and progress tracking

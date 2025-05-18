@@ -191,10 +191,10 @@ export default function Specs() {
     };
 
     return (
-        <div className="min-h-screen p-4 md:p-8 bg-gray-900 text-white">
-            <header className="w-full mb-8">
-                <nav className="max-w-7xl mx-auto px-4">
-                    <div className="flex justify-between items-center h-12">
+        <div className="min-h-screen p-2 sm:p-4 md:p-8 bg-gray-900 text-white">
+            <header className="w-full mb-4 sm:mb-8">
+                <nav className="max-w-7xl mx-auto px-2 sm:px-4">
+                    <div className="flex justify-between items-center h-12 sm:h-16">
                         <div className="flex-1 flex justify-center">
                             <Typography 
                                 variant="h6" 
@@ -203,7 +203,7 @@ export default function Specs() {
                                     color: "#FCD34D",
                                     fontWeight: 600,
                                     letterSpacing: "0.025em",
-                                    fontSize: "1rem",
+                                    fontSize: { xs: '0.875rem', sm: '1rem' },
                                     cursor: 'default',
                                     position: 'absolute',
                                     left: '50%',
@@ -221,8 +221,8 @@ export default function Specs() {
             </header>
 
             <div className="max-w-6xl mx-auto">
-                <div className="mb-8">
-                    <div className="relative h-[600px] rounded-lg overflow-hidden shadow-lg mb-8">
+                <div className="mb-4 sm:mb-8">
+                    <div className="relative h-[300px] sm:h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-8">
                         <Image
                             src="/rocketfinal.jpg"
                             alt="Water Rocket Final Design"
@@ -232,129 +232,135 @@ export default function Specs() {
                         />
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
-                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                    <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Key Features
                         </Typography>
-                        <TableContainer>
-                            <Table>
-                                <TableHead>
-                                    <TableRow sx={{ backgroundColor: '#2563EB' }}>
-                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>Feature</TableCell>
-                                        <TableCell sx={{ fontWeight: 600, color: '#FCD34D' }}>Specification</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {specifications.map((spec, index) => (
-                                        <TableRow
-                                            key={index}
-                                            sx={{
-                                                '&:hover': { backgroundColor: '#2563EB' },
-                                                transition: 'background-color 0.2s'
-                                            }}
-                                        >
-                                            <TableCell sx={{ color: '#FCD34D' }}>{spec.category}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{spec.detail}</TableCell>
+                        <div className="overflow-x-auto">
+                            <TableContainer>
+                                <Table size="small">
+                                    <TableHead>
+                                        <TableRow sx={{ backgroundColor: '#2563EB' }}>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Feature</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Specification</TableCell>
                                         </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
+                                    </TableHead>
+                                    <TableBody>
+                                        {specifications.map((spec, index) => (
+                                            <TableRow
+                                                key={index}
+                                                sx={{
+                                                    '&:hover': { backgroundColor: '#2563EB' },
+                                                    transition: 'background-color 0.2s'
+                                                }}
+                                            >
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{spec.category}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{spec.detail}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
-                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                    <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Component Measurements
                         </Typography>
-                        <Typography variant="body2" sx={{ color: "#FCD34D", mb: 3 }}>
+                        <Typography variant="body2" sx={{ color: "#FCD34D", mb: 3, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                             Note: Fin measurements are for a single fin. The rocket uses 4 identical fins.
                         </Typography>
-                        <TableContainer>
-                            <Table size="small">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Component</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Volume</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Mass</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Weight</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Dimensions</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Surface Area</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {componentMeasurements.map((component, index) => (
-                                        <TableRow key={index}>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.name}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.volume}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.mass}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.weight}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.dimensions}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{component.surfaceArea}</TableCell>
+                        <div className="overflow-x-auto">
+                            <TableContainer>
+                                <Table size="small">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Component</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Volume</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Mass</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Weight</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Dimensions</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Surface Area</TableCell>
                                         </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
+                                    </TableHead>
+                                    <TableBody>
+                                        {componentMeasurements.map((component, index) => (
+                                            <TableRow key={index}>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.name}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.volume}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.mass}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.weight}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.dimensions}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{component.surfaceArea}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
-                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                    <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Rocket Variants Comparison
                         </Typography>
-                        <TableContainer>
-                            <Table size="small">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Variant</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Volume</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Mass</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Weight</TableCell>
-                                        <TableCell sx={{ color: '#FCD34D' }}>Surface Area</TableCell>
-                                    </TableRow>
-                                </TableHead>
-                                <TableBody>
-                                    {rocketVariants.map((variant, index) => (
-                                        <TableRow key={index}>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.name}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.volume}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.mass}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.weight}</TableCell>
-                                            <TableCell sx={{ color: '#FCD34D' }}>{variant.surfaceArea}</TableCell>
+                        <div className="overflow-x-auto">
+                            <TableContainer>
+                                <Table size="small">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Variant</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Volume</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Mass</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Weight</TableCell>
+                                            <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Surface Area</TableCell>
                                         </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
+                                    </TableHead>
+                                    <TableBody>
+                                        {rocketVariants.map((variant, index) => (
+                                            <TableRow key={index}>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{variant.name}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{variant.volume}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{variant.mass}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{variant.weight}</TableCell>
+                                                <TableCell sx={{ color: '#FCD34D', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{variant.surfaceArea}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
-                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                    <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Performance Specifications
                         </Typography>
-                        <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
+                        <ul className="list-disc pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-[#FCD34D] text-sm sm:text-base">
                             <li>Compressed Air Pressure: 8 bar (800,000 Pascals)</li>
                             <li>Thrust Generated: Approximately 1700N</li>
                             <li>Air Resistance: Varies by cone cross-section</li>
                         </ul>
                     </div>
 
-                    <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg mb-8">
-                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                    <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
+                        <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Safety Features
                         </Typography>
-                        <ul className="list-disc pl-6 space-y-2 text-[#FCD34D]">
+                        <ul className="list-disc pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-[#FCD34D] text-sm sm:text-base">
                             <li>Pressure release valve for safety</li>
                             <li>Reinforced nozzle construction</li>
                             <li>Impact-resistant materials</li>
                         </ul>
                     </div>
 
-                    <div className="mt-8">
-                        <Typography variant="h5" sx={{ color: "#FFFFFF", fontWeight: 600, mb: 3 }}>
+                    <div className="mt-4 sm:mt-8">
+                        <Typography variant="h5" sx={{ color: "#FFFFFF", fontWeight: 600, mb: 2, sm: { mb: 3 }, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             Materials Research
                         </Typography>
 
-                        <Typography variant="body1" sx={{ color: "#FFFFFF", mb: 4 }}>
+                        <Typography variant="body1" sx={{ color: "#FFFFFF", mb: 3, sm: { mb: 4 }, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                             We had to identify a material that provides high stiffness, low density, excellent dimensional accuracy,
                             and reliable 3D printability. The following table presents five candidate materials and their key properties.
                             These values have been gathered from aerospace materials databases and published literature.
@@ -374,14 +380,14 @@ export default function Specs() {
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow sx={{ backgroundColor: '#374151' }}>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Material</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Density (kg/m³)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young&apos;s Modulus (GPa)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Tensile Strength (MPa)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Yield Strength (MPa)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Elongation (%)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Cost (USD/kg)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Printability</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Material</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Density (kg/m³)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Young&apos;s Modulus (GPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Tensile Strength (MPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Yield Strength (MPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Elongation (%)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Cost (USD/kg)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>Printability</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -393,14 +399,14 @@ export default function Specs() {
                                                     transition: 'background-color 0.2s'
                                                 }}
                                             >
-                                                <TableCell sx={{ color: '#FFFFFF', fontWeight: 500 }}>{material.material}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.density}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.youngsModulus}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.tensileStrength}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.yieldStrength}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.elongation}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.cost}</TableCell>
-                                                <TableCell sx={{ color: '#FFFFFF' }}>{material.printability}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontWeight: 500, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.material}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.density}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.youngsModulus}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.tensileStrength}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.yieldStrength}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.elongation}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.cost}</TableCell>
+                                                <TableCell sx={{ color: '#FFFFFF', fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>{material.printability}</TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>
@@ -408,19 +414,19 @@ export default function Specs() {
                             </TableContainer>
                         </div>
 
-                        <div className="bg-[#3B82F6] p-6 rounded-lg shadow-lg">
-                            <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2 }}>
+                        <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg">
+                            <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                                 Material Selection Rationale
                             </Typography>
-                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 2 }}>
+                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 2, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                                 {materialSelection.description}
                             </Typography>
-                            <ul className="list-disc pl-6 space-y-2 text-[#FCD34D] mb-4">
+                            <ul className="list-disc pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-[#FCD34D] mb-3 sm:mb-4 text-sm sm:text-base">
                                 {materialSelection.points.map((point, index) => (
-                                    <li key={index} className="mb-2">{point}</li>
+                                    <li key={index} className="mb-1 sm:mb-2">{point}</li>
                                 ))}
                             </ul>
-                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 3 }}>
+                            <Typography variant="body2" sx={{ color: '#FFFFFF', mb: 2, sm: { mb: 3 }, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                                 {materialSelection.conclusion}
                             </Typography>
                         </div>
