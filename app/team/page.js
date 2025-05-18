@@ -17,7 +17,7 @@ const teamMembers = [
       "Design and test a functional rocket using Solidworks CAD and fluid simulation", 
       "3D print and test rocket to ensure package is safe and functional"
     ],
-    image: "/designteam.jfif"
+    image: "/designteam.jpg"
   },
   {
     name: "Research Team",
@@ -27,7 +27,7 @@ const teamMembers = [
       "Discover the ideal materials for the rocket",
       "Calculate costs involved with the manufacturing of the package"
     ],
-    image: "/calcteam.jfif"
+    image: "/calcteam.jpg"
   },
   {
     name: "Communications and Marketing Team", 
@@ -38,7 +38,7 @@ const teamMembers = [
       "Create a unique identity for the team and product",
       "Handle feedback and adjust accordingly"
     ],
-    image: "/webteam.jfif"
+    image: "/webteam.jpg"
   }
 ];
 
@@ -91,7 +91,7 @@ export default function Team() {
           </Typography>
           <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/wholeteam.jfif"
+              src="/wholeteam.jpg"
               alt="Whole Team"
               fill
               className="object-contain"
@@ -189,7 +189,7 @@ export default function Team() {
           >
             <div className="flex justify-center">
               <Image
-                src="/Gantt chart.jfif"
+                src="/gantt-chart.jpg"
                 alt="Project Gantt Chart"
                 width={1000}
                 height={500}

@@ -224,7 +224,7 @@ export default function Specs() {
                 <div className="mb-8">
                     <div className="relative h-[600px] rounded-lg overflow-hidden shadow-lg mb-8">
                         <Image
-                            src="/rocketfinal.jfif"
+                            src="/rocketfinal.jpg"
                             alt="Water Rocket Final Design"
                             fill
                             className="object-contain"

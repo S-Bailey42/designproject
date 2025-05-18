@@ -16,6 +16,7 @@ export default function ClientLayout({ children }) {
   };
 
   const navItems = [
+    // Navigation items for the website
     { name: 'Home', path: '/' },
     { name: 'Team', path: '/team' },
     { name: 'Specs', path: '/specs' },

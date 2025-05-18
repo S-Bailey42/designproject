@@ -12,9 +12,9 @@ export default function Gallery() {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const fins = [
-    { src: "/fin 1.jfif", title: "Classic Fin Design" },
-    { src: "/fin 2.jfif", title: "Delta Wing Fin" },
-    { src: "/fin 3.jfif", title: "Swept Back Fin" }
+    { src: "/fin 1.jpg", title: "Classic Fin Design" },
+    { src: "/fin 2.jpg", title: "Delta Wing Fin" },
+    { src: "/fin 3.jpg", title: "Swept Back Fin" }
   ];
 
   const nosecones = [
