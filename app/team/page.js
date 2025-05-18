@@ -103,7 +103,7 @@ export default function Team() {
           </div>
         </div>
 
-        <Grid container spacing={2} sm:spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 4 }}>
           {teamMembers.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card 
