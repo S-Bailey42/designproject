@@ -8,7 +8,7 @@ export default function TestingPage() {
       <div className="bg-gray-800 rounded-lg p-6 shadow-lg mb-8">
         <h2 className="text-2xl font-semibold text-[#FCD34D] mb-4">Volume and Pressure Optimization</h2>
         <p className="text-gray-300 mb-4">
-          Through extensive testing of various water volumes and pressure combinations, we've identified the optimal configuration for maximum thrust. Our testing methodology involved:
+          Through extensive testing of various water volumes and pressure combinations, we&apos;ve identified the optimal configuration for maximum thrust. Our testing methodology involved:
         </p>
         <ul className="list-disc list-inside text-gray-300 mb-4 space-y-2">
           <li>Testing water volumes ranging from 400ml to 1100ml</li>

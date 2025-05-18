@@ -376,7 +376,7 @@ export default function Specs() {
                                         <TableRow sx={{ backgroundColor: '#374151' }}>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Material</TableCell>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Density (kg/m³)</TableCell>
-                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young's Modulus (GPa)</TableCell>
+                                            <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Young&apos;s Modulus (GPa)</TableCell>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Tensile Strength (MPa)</TableCell>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Yield Strength (MPa)</TableCell>
                                             <TableCell sx={{ fontWeight: 600, color: '#FFFFFF' }}>Elongation (%)</TableCell>
