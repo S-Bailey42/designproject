@@ -22,6 +22,7 @@ export default function ClientLayout({ children }) {
     { name: 'Specs', path: '/specs' },
     { name: 'Designs', path: '/designs' },
     { name: 'Group Work', path: '/group-work' },
+    { name: 'Try it Yourself', path: '/try-it-yourself' },
     { name: 'Appendix', path: '/appendix' },
     { name: 'Testing', path: '/testing' },
   ];
