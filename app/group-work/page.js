@@ -2,8 +2,9 @@
 
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
+import Image from 'next/image';
 
-export default function GroupWork() {
+export default function Introduction() {
   return (
     <div className="min-h-screen p-4 md:p-8 bg-gray-900 text-white">
       <header className="w-full mb-8">
@@ -27,7 +28,7 @@ export default function GroupWork() {
                   }
                 }}
               >
-                GROUP WORK
+                INTRODUCTION
               </Typography>
             </div>
           </div>
@@ -37,12 +38,30 @@ export default function GroupWork() {
       <div className="max-w-6xl mx-auto">
         <section className="mb-16">
           <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
-            Progress Reports
+            Project Overview
           </Typography>
           <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
-            <Typography variant="body1" sx={{ color: "#FFFFFF" }}>
-              Progress reports will be added here.
-            </Typography>
+            <div className="relative w-full aspect-[1/1.414] mb-4">
+              <Image
+                src="/A3 poster.png"
+                alt="Project A3 Poster"
+                fill
+                className="object-contain rounded-lg"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <Typography variant="h5" sx={{ color: "#FCD34D", fontWeight: 600, mb: 4 }}>
+            Project Video
+          </Typography>
+          <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
+            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
+              <Typography variant="body1" sx={{ color: "#FCD34D" }}>
+                Project video coming soon...
+              </Typography>
+            </div>
           </div>
         </section>
       </div>

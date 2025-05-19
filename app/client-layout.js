@@ -18,13 +18,13 @@ export default function ClientLayout({ children }) {
   const navItems = [
     // Navigation items for the website
     { name: 'Home', path: '/' },
+    { name: 'Introduction', path: '/group-work' },
     { name: 'Team', path: '/team' },
     { name: 'Specs', path: '/specs' },
     { name: 'Designs', path: '/designs' },
-    { name: 'Group Work', path: '/group-work' },
     { name: 'Try it Yourself', path: '/try-it-yourself' },
-    { name: 'Appendix', path: '/appendix' },
     { name: 'Testing', path: '/testing' },
+    { name: 'Appendix', path: '/appendix' },
   ];
 
   return (
