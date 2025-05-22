@@ -10,6 +10,11 @@ import Link from 'next/link';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import FileIcon from '@mui/icons-material/FileCopy';
 
 export default function TryItYourself() {
   const router = useRouter();
@@ -55,6 +60,8 @@ export default function TryItYourself() {
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
+              href="/LemonLauncher.SLDASM"
+              download
               sx={{
                 backgroundColor: "#FCD34D",
                 color: "#1E3A8A",
