@@ -43,7 +43,7 @@ export default function Introduction() {
           <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
             <div className="relative w-full aspect-[1/1.414] mb-4">
               <Image
-                src="/A3 poster.png"
+                src="/updated-poster.png"
                 alt="Project A3 Poster"
                 fill
                 className="object-contain rounded-lg"
@@ -57,10 +57,18 @@ export default function Introduction() {
             Project Video
           </Typography>
           <div className="bg-[#3B82F6] rounded-xl p-6 shadow-lg">
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-              <Typography variant="body1" sx={{ color: "#FCD34D" }}>
-                Project video coming soon...
+            <div className="flex flex-col items-center space-y-4">
+              <Typography variant="body1" sx={{ color: "#FCD34D", textAlign: 'center', mb: 2 }}>
+                Scan the QR code below to watch our project video
               </Typography>
+              <div className="relative w-64 h-64">
+                <Image
+                  src="/youtube-video.png"
+                  alt="Project Video QR Code"
+                  fill
+                  className="object-contain rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </section>

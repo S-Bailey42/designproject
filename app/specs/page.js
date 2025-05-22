@@ -101,11 +101,11 @@ export default function Specs() {
         },
         {
             name: 'Cone',
-            volume: '55125.363 mm³',
-            mass: '0.25 kg',
-            weight: '2.45 N',
-            dimensions: '10.5cm × 11.4cm',
-            surfaceArea: '0.001746 m²'
+            volume: '313303.718 mm³',
+            mass: '0.313 kg',
+            weight: '3.07 N',
+            dimensions: '15.5cm × 16.8cm',
+            surfaceArea: '0.00174 m²'
         },
         {
             name: 'Fin Sleeve',
@@ -222,16 +222,6 @@ export default function Specs() {
 
             <div className="max-w-6xl mx-auto">
                 <div className="mb-4 sm:mb-8">
-                    <div className="relative h-[300px] sm:h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-8">
-                        <Image
-                            src="/rocketfinal.jpg"
-                            alt="Water Rocket Final Design"
-                            fill
-                            className="object-contain"
-                            style={{ objectPosition: 'center' }}
-                        />
-                    </div>
-
                     <div className="bg-[#3B82F6] p-3 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-8">
                         <Typography variant="h6" sx={{ color: "#FCD34D", fontWeight: 600, mb: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                             Key Features

@@ -38,7 +38,7 @@ export default function Home() {
                   }
                 }}
               >
-                LEMON LAUNCHER
+                LEMON LAUNCH
               </Typography>
             </div>
 
@@ -95,27 +95,19 @@ export default function Home() {
           >
             Experience unprecedented height and stability
           </Typography>
-          <div 
-            className="relative cursor-pointer"
-            onClick={() => setShowDetails(!showDetails)}
-          >
+          <div className="relative">
             <Image
-              src="/logo.png"
+              src="/logo.jfif"
               alt="Water Rocket Pro Logo"
               width={500}
               height={300}
               className="rounded-lg shadow-xl transition-transform duration-300 hover:scale-[1.02] mx-auto"
               style={{ objectFit: 'contain' }}
             />
-            {showDetails && (
-              <div className="absolute inset-0 bg-black bg-opacity-75 rounded-lg flex items-center justify-center text-white p-4">
-                <p>Click to view detailed specifications and features</p>
-              </div>
-            )}
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
           <div className="p-4 bg-[#3B82F6] rounded-lg transition-all duration-300 hover:bg-[#2563EB] hover:shadow-xl hover:scale-105 cursor-pointer">
             <Typography variant="subtitle1" sx={{ 
               color: "#FCD34D", 
@@ -125,7 +117,7 @@ export default function Home() {
                 transform: 'scale(1.1)'
               }
             }}>
-              200ft+ Height
+              150ft+ Height
             </Typography>
             <Typography variant="body2" sx={{ 
               color: "#FCD34D",
@@ -176,7 +168,7 @@ export default function Home() {
                 transform: 'scale(1.1)'
               }
             }}>
-              Ready in 5 minutes
+              Ready in 10 minutes
             </Typography>
           </div>
         </div>

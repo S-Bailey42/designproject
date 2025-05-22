@@ -13,7 +13,17 @@ export default function PreOrder() {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    address1: '',
+    address2: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: '',
+    cardNumber: '',
+    expiryDate: '',
+    cvv: '',
+    cardholderName: ''
   });
 
   const handleSubmit = (e) => {
@@ -37,13 +47,13 @@ export default function PreOrder() {
           <div className="flex justify-between items-center h-12">
             <div className="flex-1 flex justify-center">
               <Typography 
-                variant="h6" 
+                variant="h4"
                 component="div"
                 sx={{ 
-                  color: "#6B7280",
-                  fontWeight: 600,
-                  letterSpacing: "0.025em",
-                  fontSize: "1rem",
+                  color: "#FCD34D",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  fontSize: { xs: '1.5rem', sm: '2rem' },
                   cursor: 'default',
                   position: 'absolute',
                   left: '50%',
@@ -61,7 +71,31 @@ export default function PreOrder() {
       </header>
 
       <main className="flex flex-col gap-6 items-center max-w-4xl mx-auto text-center">
+        <div className="w-full max-w-lg bg-[#3B82F6] p-8 rounded-lg shadow-lg mb-6">
+          <Typography 
+            variant="h4" 
+            sx={{ 
+              color: "#FCD34D",
+              fontWeight: 700,
+              mb: 2
+            }}
+          >
+            £12
+          </Typography>
+          <Typography 
+            variant="subtitle1" 
+            sx={{ 
+              color: "#FCD34D",
+              fontWeight: 500
+            }}
+          >
+            Pre-order your Water Rocket today!
+          </Typography>
+        </div>
         <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+          <Typography variant="h6" sx={{ mb: 3, color: "#1E3A8A", fontWeight: 600 }}>
+            Contact Information
+          </Typography>
           <div className="grid grid-cols-2 gap-4 mb-6">
             <TextField
               name="firstName"
@@ -99,11 +133,116 @@ export default function PreOrder() {
               type="tel"
               variant="outlined"
               fullWidth
-              required
               value={formData.phone}
               onChange={handleChange}
             />
           </div>
+
+          <Typography variant="h6" sx={{ mb: 3, mt: 4, color: "#1E3A8A", fontWeight: 600 }}>
+            Shipping Address
+          </Typography>
+          <div className="grid grid-cols-1 gap-4 mb-6">
+            <TextField
+              name="address1"
+              label="Address Line 1"
+              variant="outlined"
+              fullWidth
+              required
+              value={formData.address1}
+              onChange={handleChange}
+            />
+            <TextField
+              name="address2"
+              label="Address Line 2 (Optional)"
+              variant="outlined"
+              fullWidth
+              value={formData.address2}
+              onChange={handleChange}
+            />
+            <TextField
+              name="city"
+              label="City"
+              variant="outlined"
+              fullWidth
+              required
+              value={formData.city}
+              onChange={handleChange}
+            />
+            <div className="grid grid-cols-2 gap-4">
+              <TextField
+                name="state"
+                label="State / Province"
+                variant="outlined"
+                fullWidth
+                required
+                value={formData.state}
+                onChange={handleChange}
+              />
+              <TextField
+                name="zip"
+                label="Zip / Postal Code"
+                variant="outlined"
+                fullWidth
+                required
+                value={formData.zip}
+                onChange={handleChange}
+              />
+            </div>
+            <TextField
+              name="country"
+              label="Country"
+              variant="outlined"
+              fullWidth
+              required
+              value={formData.country}
+              onChange={handleChange}
+            />
+          </div>
+
+          <Typography variant="h6" sx={{ mb: 3, mt: 4, color: "#1E3A8A", fontWeight: 600 }}>
+            Payment Information
+          </Typography>
+          <div className="grid grid-cols-1 gap-4 mb-6">
+            <TextField
+              name="cardNumber"
+              label="Card Number"
+              variant="outlined"
+              fullWidth
+              required
+              value={formData.cardNumber}
+              onChange={handleChange}
+            />
+            <div className="grid grid-cols-2 gap-4">
+              <TextField
+                name="expiryDate"
+                label="Expiry Date (MM/YY)"
+                variant="outlined"
+                fullWidth
+                required
+                value={formData.expiryDate}
+                onChange={handleChange}
+              />
+              <TextField
+                name="cvv"
+                label="CVV"
+                variant="outlined"
+                fullWidth
+                required
+                value={formData.cvv}
+                onChange={handleChange}
+              />
+            </div>
+            <TextField
+              name="cardholderName"
+              label="Cardholder Name"
+              variant="outlined"
+              fullWidth
+              required
+              value={formData.cardholderName}
+              onChange={handleChange}
+            />
+          </div>
+
           <Button
             type="submit"
             variant="contained"
