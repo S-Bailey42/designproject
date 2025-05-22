@@ -97,7 +97,7 @@ export default function Home() {
           </Typography>
           <div className="relative">
             <Image
-              src="/logo.png"
+              src="/logo (1).png"
               alt="Water Rocket Pro Logo"
               width={500}
               height={300}
